@@ -1,6 +1,6 @@
 # dashboard
 
-Working auth dashboard.nHas home page. User can login from there. Will take them to dashboard page. Authenticated users will be auto redirected to dashboard page. And unauthenticated users will be redirected to the home page. Uses BetterAuth, Drizzle, and Postgres.  
+Working auth dashboard. Has home page. User can login from there. Will take them to dashboard page. Authenticated users will be auto redirected to dashboard page. And unauthenticated users will be redirected to the home page. Uses BetterAuth, Drizzle, and Postgres. 
 
 
 ## Technologies Used
