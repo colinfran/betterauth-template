@@ -20,12 +20,7 @@ const RootLayout: FC<{
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link href="/apple-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" />
-        <link href="/android-icon-192x192.png" rel="icon" sizes="192x192" type="image/png" />
-        <link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" />
-        <link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" />
-        <link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" />
-        <title>trading bot dashboard</title>
+        <title>betterauth template</title>
       </head>
       <body className="flex min-h-screen w-full flex-col">
         <NextTopLoader color={"#808080"} showSpinner={false} zIndex={100} />

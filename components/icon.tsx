@@ -23,7 +23,7 @@ const Icon: FC<Props> = ({ size = 32 }) => {
       alt="logo"
       className={isDark ? "invert" : ""}
       height={size}
-      src={"/logo.png"}
+      src={"/favicon.ico"}
       width={size}
       suppressHydrationWarning
     />
