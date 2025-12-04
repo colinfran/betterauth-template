@@ -9,7 +9,7 @@
     "lint:fix": "eslint . --fix",
     "test": "jest",
     "start": "next start",
-    "prepare": "npx husky init"
+    "prepare": "husky"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
@@ -23,11 +23,12 @@
     "clsx": "^2.1.1",
     "drizzle-kit": "^0.31.7",
     "drizzle-orm": "latest",
+    "husky": "^9.1.7",
     "knex": "latest",
     "kysely": "latest",
     "lucide-react": "^0.454.0",
     "mysql2": "latest",
-    "next": "16.0.3",
+    "next": "16.0.7",
     "next-themes": "^0.4.6",
     "nextjs-toploader": "^3.9.17",
     "pg": "latest",
