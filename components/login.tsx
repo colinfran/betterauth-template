@@ -26,10 +26,15 @@ const LoginForm: FC = () => {
     setError("")
     setIsLoading(true)
     try {
-      await signIn(email, password)
+      const throwError = (err: string): void => {
+        setIsLoading(false)
+        setError(err)
+        return
+      }
+      await signIn(email, password, throwError)
     } catch (err: unknown) {
       setIsLoading(false)
-      setError(err instanceof Error ? err.message : "Authentication failed")
+      setError(err as string)
     }
   }
 

@@ -15,14 +15,25 @@ const signOut = async (): Promise<any> => {
   })
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const signIn = async (email: string, password: string): Promise<any> => {
-  return await authClient.signIn.email({
-    email,
-    password,
-    callbackURL: "/dashboard",
-    rememberMe: true,
-  })
+const signIn = async (
+  email: string,
+  password: string,
+  throwError: (err: string) => void,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+): Promise<any> => {
+  return await authClient.signIn.email(
+    {
+      email,
+      password,
+      callbackURL: "/dashboard",
+      rememberMe: true,
+    },
+    {
+      onError: (ctx) => {
+        throwError(ctx.error.message)
+      },
+    },
+  )
 }
 
 const signUp = async (
@@ -30,6 +41,7 @@ const signUp = async (
   email: string,
   password: string,
   redirect: () => void,
+  throwError: (err: string) => void,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
 ): Promise<any> => {
   return await authClient.signUp.email(
@@ -41,6 +53,9 @@ const signUp = async (
     {
       onSuccess: () => {
         redirect()
+      },
+      onError: (ctx) => {
+        throwError(ctx.error.message)
       },
     },
   )

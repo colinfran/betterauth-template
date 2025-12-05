@@ -28,7 +28,12 @@ const SignupForm: FC = () => {
     setError("")
     setIsLoading(true)
     try {
-      await signUp(name, email, password, () => router.push("/dashboard"))
+      const throwError = (err: string): void => {
+        setIsLoading(false)
+        setError(err)
+        return
+      }
+      await signUp(name, email, password, () => router.push("/dashboard"), throwError)
     } catch (err: unknown) {
       setIsLoading(false)
       setError(err instanceof Error ? err.message : "Authentication failed")
