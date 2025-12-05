@@ -25,4 +25,25 @@ const signIn = async (email: string, password: string): Promise<any> => {
   })
 }
 
-export { useSession, signIn, signOut }
+const signUp = async (
+  name: string,
+  email: string,
+  password: string,
+  redirect: () => void,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+): Promise<any> => {
+  return await authClient.signUp.email(
+    {
+      email,
+      password,
+      name,
+    },
+    {
+      onSuccess: () => {
+        redirect()
+      },
+    },
+  )
+}
+
+export { useSession, signIn, signOut, signUp }

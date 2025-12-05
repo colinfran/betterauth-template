@@ -33,3 +33,4 @@ public/sitemap.xml
 .vercel
 
 next-env.d.ts
+.env*.local
