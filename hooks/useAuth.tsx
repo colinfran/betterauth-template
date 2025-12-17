@@ -5,12 +5,12 @@ type AuthType = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   signOut: () => Promise<any>
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  signIn: () => Promise<any>
+  signIn: (email: string, password: string, throwError: any) => Promise<any>
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   signUp: () => Promise<any>
-
   useSession: () => Promise<SessionType>
 }
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const useAuth: any = () => {
   const router = useRouter()
