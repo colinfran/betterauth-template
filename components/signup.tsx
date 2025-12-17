@@ -1,5 +1,5 @@
 "use client"
-import { signUp } from "@/lib/auth/auth-client"
+import useAuth from "@/hooks/useAuth"
 import { SignupSchema, signupSchema } from "@/lib/form-schemas/login-schema"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { FC, useState } from "react"
@@ -8,13 +8,12 @@ import { Button } from "@/components/ui/button"
 import { Eye, EyeOff, Loader2 } from "lucide-react"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
-import { useRouter } from "next/navigation"
 
 const SignupForm: FC = () => {
+  const { signUp } = useAuth()
   const [showPassword, setShowPassword] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState("")
-  const router = useRouter()
 
   const {
     register,
@@ -33,7 +32,7 @@ const SignupForm: FC = () => {
         setError(err)
         return
       }
-      await signUp(name, email, password, () => router.push("/dashboard"), throwError)
+      await signUp(name, email, password, throwError)
     } catch (err: unknown) {
       setIsLoading(false)
       setError(err instanceof Error ? err.message : "Authentication failed")

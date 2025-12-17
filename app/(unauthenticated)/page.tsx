@@ -4,11 +4,12 @@ import { FC, useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { redirect } from "next/navigation"
 import LoginForm from "../../components/login"
-import { useSession } from "@/lib/auth/auth-client"
+import useAuth from "@/hooks/useAuth"
 import { Button } from "@/components/ui/button"
 import SignupForm from "@/components/signup"
 
 const Page: FC = () => {
+  const { useSession } = useAuth()
   const { data: session } = useSession()
   const [login, setLogin] = useState(true)
   if (session) {

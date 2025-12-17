@@ -1,10 +1,11 @@
 "use client"
 
 import React, { FC, useState } from "react"
-import { signOut } from "@/lib/auth/auth-client"
+import useAuth from "@/hooks/useAuth"
 import { Loader2, LogOut } from "lucide-react"
 
 const LogOutButton: FC = () => {
+  const { signOut } = useAuth()
   const [loading, setLoading] = useState(false)
   const onClick = async (): Promise<void> => {
     try {

@@ -1,5 +1,5 @@
 "use client"
-import { signIn } from "@/lib/auth/auth-client"
+import useAuth from "@/hooks/useAuth"
 import { loginSchema, LoginSchema } from "@/lib/form-schemas/login-schema"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { FC, useState } from "react"
@@ -10,6 +10,7 @@ import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 
 const LoginForm: FC = () => {
+  const { signIn } = useAuth()
   const [showPassword, setShowPassword] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState("")
