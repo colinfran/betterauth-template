@@ -1,6 +1,5 @@
 import { authClient, SessionType, useSession } from "@/lib/auth/auth-client"
 import { useRouter } from "next/navigation"
-import { ReactNode } from "react"
 
 type AuthType = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -9,7 +8,7 @@ type AuthType = {
   signIn: () => Promise<any>
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   signUp: () => Promise<any>
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   useSession: () => Promise<SessionType>
 }
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
