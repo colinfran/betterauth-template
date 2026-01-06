@@ -1,4 +1,4 @@
-import { authClient, SessionType, useSession } from "@/lib/auth/auth-client"
+import { authClient, useSession } from "@/lib/auth/auth-client"
 import { useRouter } from "next/navigation"
 
 type AuthType = {
@@ -11,7 +11,6 @@ type AuthType = {
   useSession: typeof useSession
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const useAuth = (): AuthType => {
   const router = useRouter()
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
